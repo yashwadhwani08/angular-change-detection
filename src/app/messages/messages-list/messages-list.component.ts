@@ -1,19 +1,19 @@
 // import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
+  // ChangeDetectorRef,
   Component,
-  DestroyRef,
+  // DestroyRef,
   inject,
-  OnInit,
+  // OnInit,
 } from '@angular/core';
 import { MessagesService } from '../messages.service';
-import { AsyncPipe } from '@angular/common';
+// import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-messages-list',
   standalone: true,
-  imports: [AsyncPipe],
+  // imports: [AsyncPipe],
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +23,8 @@ export class MessagesListComponent {
   // messages = input.required<string[]>();
 
   private messagesService = inject(MessagesService);
-  messages$ = this.messagesService.messages$;
+  messages = this.messagesService.allMessages;
+  // messages$ = this.messagesService.messages$;
   // private cdRef = inject(ChangeDetectorRef);
   // private destroyRef = inject(DestroyRef);
 
